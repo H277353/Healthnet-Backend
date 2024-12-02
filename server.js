@@ -13,6 +13,9 @@ mongoose.connect(process.env.MONGO_URI)
 
 const server = http.createServer(app);
 const io = new Server(server);
+const cors = require('cors');
+app.use(cors());
+
 
 app.use(express.json());
 
@@ -44,6 +47,11 @@ io.on('connection', (socket) => {
     console.log('A user disconnected');
   });
 });
+
+
+const authRoutes = require('./routes/authRoutes'); // Import authentication routes
+app.use('/api/auth', authRoutes); // Add authentication routes
+
 
 // Function to notify clients
 const notifyQueueStatus = (queue) => {
