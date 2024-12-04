@@ -25,8 +25,7 @@ const inventoryRoutes = require('./routes/inventoryRoutes');
 const patientRoutes = require('./routes/patientRoutes');
 const bedRoutes = require('./routes/bedRoutes');
 const queueRoutes = require('./routes/queueRoutes');
-const doctorRoutes = require('./routes/doctorRoutes');  // Import doctorRoutes
-const nurseRoutes = require('./routes/nurseRoutes');    // Import nurseRoutes
+const doctorRoutes = require('./routes/doctorRoutes');   
 
 // Use Routes
 app.use('/api/hospitals', hospitalRoutes);
@@ -34,8 +33,7 @@ app.use('/api/inventories', inventoryRoutes);
 app.use('/api/patients', patientRoutes);
 app.use('/api/beds', bedRoutes);
 app.use('/api/queues', queueRoutes);
-app.use('/api/doctors', doctorRoutes);  // Add doctorRoutes
-app.use('/api/nurses', nurseRoutes);    // Add nurseRoutes
+app.use('/api/doctors', doctorRoutes);    
 
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
